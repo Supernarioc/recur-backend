@@ -57,7 +57,6 @@ api.get('/full_releases/:releaseID', (req, res) => {
 
 // Gets a TruckRounds object from the frontend and will update the database with the new information
 api.post('/update_rounds', (req, res) => {
-	console.log('jdiosa');
 	console.log(req.body);
 	res.send({result: 200});
 });
@@ -104,14 +103,6 @@ api.delete('/delete_release/:release', (req, res) => {
 auth.post('/test', (req, res) => {
 	console.log(req.body);
 	res.sendStatus(200);
-});
-
-auth.post('/login', (req, res) => {
-	console.log(req.body);
-
-	user = {username: req.body.username, password: req.body.password, token: 'hello'};
-
-	res.send(user)
 });
 
 app.use('/api', api);
